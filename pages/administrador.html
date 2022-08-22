@@ -59,8 +59,7 @@
         <p class="mb-0">Opciones:</p>
         <button
           class="btn btn-outline-primary btn-sm ms-3"
-        id="btnCrearSerie" data-bs-toggle="modal" data-bs-target="#modalSerie"
-        >
+        id="btnCrearPelicula">
           <i class="bi bi-clipboard2-plus-fill"></i>
         </button>
       </section>
@@ -172,7 +171,7 @@
     <!-- Modal para administrar series -->
     <div
       class="modal fade"
-      id="modalSerie"
+      id="modalPelicula"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -191,7 +190,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="formSerie">
+            <form id="formPelicula">
               <div class="mb-3">
                 <label for="codigo">Codigo</label>
                 <input
@@ -201,6 +200,7 @@
                   placeholder="123"
                   maxlength="5"
                   minlength="1"
+                  disabled
                 />
               </div>
               <div class="mb-3">
@@ -260,6 +260,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="../js/admin.js" type="module"></script>
   </body>
 </html>
