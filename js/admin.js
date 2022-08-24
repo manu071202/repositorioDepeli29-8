@@ -19,6 +19,37 @@ const modalAdminPelicula = new bootstrap.Modal(document.querySelector('#modalPel
 btnCrearPelicula.addEventListener('click', crearPelicula);
 formPelicula.addEventListener('submit', guardarPelicula);
 
+cargarInicial();
+
+function cargarInicial(){
+    if(listaPeliculas.length > 0){
+        //dibujar las filas de la tabla
+        listaPeliculas.forEach((itemPelicula)=>{ crearFila(itemPelicula) })
+    }
+}
+
+function crearFila(pelicula){
+    //esta funcion dibuja un tr
+    let tablaPeliculas = document.querySelector('#tablaPeliculas');
+    //creamos el tr con document.createElement o innerHTML del tbody
+    tablaPeliculas.innerHTML += `<tr>
+    <th scope="row">${pelicula.codigo}</th>
+    <td>${pelicula.titulo}</td>
+    <td>${pelicula.descripcion}</td>
+    <td>${pelicula.imagen}</td>
+    <td>${pelicula.genero}</td>
+    <td>
+      <button class="btn btn-warning" >
+        <i class="bi bi-pencil-square"></i>
+      </button>
+      <button class="btn btn-danger">
+        <i class="bi bi-x-square"></i>
+      </button>
+    </td>
+  </tr>`
+    console.log(tablaPeliculas)
+}
+
 function crearPelicula(){
     //mostrar ventana modal
     modalAdminPelicula.show();
