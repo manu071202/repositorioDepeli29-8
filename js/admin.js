@@ -71,6 +71,8 @@ function guardarPelicula(e){
    //limpiar formulario
    limpiarFormulario();
    console.log(listaPeliculas);
+   //dibujar la fila en la tabla
+   crearFila(nuevaPelicula)
    //cerrar la ventana modal
    modalAdminPelicula.hide();
 }
