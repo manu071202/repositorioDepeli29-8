@@ -1,6 +1,7 @@
 import { Pelicula } from "./classPelicula.js";
 
-let listaPeliculas = []; //aqui voy a guardar todas las peliculas
+//aqui voy a guardar todas las peliculas
+let listaPeliculas = JSON.parse(localStorage.getItem('listaPeliculasKey')) || []; 
 
 //traer los input
 let codigo = document.querySelector('#codigo');
@@ -34,6 +35,8 @@ function guardarPelicula(e){
    let nuevaPelicula =  new Pelicula(codigo.value, titulo.value, descripcion.value, imagen.value, genero.value);
    console.log(nuevaPelicula)
    listaPeliculas.push(nuevaPelicula);
+   //guardar el arreglo en localstorage
+   guardarPeliculasEnLocalStorage();
    //limpiar formulario
    limpiarFormulario();
    console.log(listaPeliculas);
@@ -45,4 +48,10 @@ function limpiarFormulario(){
     formPelicula.reset()
     // modificar las clases de bootstrap si es necesario
 }
+
+
+function guardarPeliculasEnLocalStorage(){
+    localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
+}
+
 
