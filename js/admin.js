@@ -42,7 +42,7 @@ function crearFila(pelicula){
       <button class="btn btn-warning" >
         <i class="bi bi-pencil-square"></i>
       </button>
-      <button class="btn btn-danger">
+      <button class="btn btn-danger" onclick='borrarPelicula()'>
         <i class="bi bi-x-square"></i>
       </button>
     </td>
@@ -87,4 +87,6 @@ function guardarPeliculasEnLocalStorage(){
     localStorage.setItem('listaPeliculasKey', JSON.stringify(listaPeliculas));
 }
 
-
+window.borrarPelicula = function (){
+    console.log('desde borrar pelicula')
+}
